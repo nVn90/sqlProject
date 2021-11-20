@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>form</title>
+  </head>
+  <body>
+    <form action="/" method="POST">
+      <input type="text" value="" name="name" placeholder="name" /><br />
+      <input type="number" value="" name="age" placeholder="age" /><br />
+      <input type="text" value="" name="dob" placeholder="dob" /><br />
+      <input type="submit" value="submit" />
+    </form>
+    <div class="container">
+      <table>
+        <tr>
+          <th>Name</th>
+          <th>Age</th>
+          <th>DOB</th>
+          <th>Action</th>
+        </tr>
+        <% emps.forEach((emp)=>{%>
+        <tr>
+          <td><%= emp.name%></td>
+          <td><%= emp.age%></td>
+          <td><%= emp.dob%></td>
+          <td>
+            <form action="/<%= emp.id%>" method="post">
+              <button type="submit">Delete</button>
+            </form>
+          </td>
+        </tr>
+        <%})%>
+      </table>
+    </div>
+  </body>
+</html>
